@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(1.00 0 0);
+  --foreground: oklch(0.28 0.02 265);
+  --card: oklch(1.00 0 0);
+  --card-foreground: oklch(0.28 0.02 265);
+  --primary: oklch(0.55 0.21 264);
+  --primary-foreground: oklch(1.00 0 0);
+  --secondary: oklch(0.55 0.17 142);
+  --secondary-foreground: oklch(1.00 0 0);
+  --muted: oklch(0.98 0.00 247);
+  --muted-foreground: oklch(0.45 0.02 265);
+  --accent: oklch(0.95 0.03 264);
+  --border: oklch(0.90 0.01 247);
+  --warning: oklch(0.70 0.17 55);
+  --pink: oklch(0.65 0.20 0);
+  --font-sans: Inter, system-ui, sans-serif;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-warning: var(--warning);
+  --color-pink: var(--pink);
+  --font-sans: var(--font-sans);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground antialiased; font-family: Inter, system-ui, sans-serif; }
+  html { scroll-behavior: smooth; }
+}
+
+.glass-navbar {
+  background-color: oklch(from var(--background) l c h / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
